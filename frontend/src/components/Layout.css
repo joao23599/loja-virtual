@@ -1,0 +1,26 @@
+.layout { min-height: 100vh; display: flex; flex-direction: column; }
+.layout__main { flex: 1; padding-top: 24px; padding-bottom: 48px; }
+
+.layout__header { border-bottom: 1px solid var(--light-gray-2); background: var(--white); }
+.layout__header-inner { display: flex; align-items: center; gap: 24px; min-height: 72px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+.layout__logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+
+.layout__nav { display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 12px; font-size: 14px; }
+.layout__nav a { text-decoration: none; color: var(--dark-gray-2); }
+.layout__nav a:hover { color: var(--primary); text-decoration: underline; }
+
+.layout__account { margin-left: auto; display: flex; align-items: center; gap: 16px; font-size: 14px; }
+.layout__account a { text-decoration: none; color: var(--dark-gray-2); }
+.layout__account a:hover { color: var(--primary); }
+.layout__account .layout__cta { padding: 8px 16px; color: var(--white); background: var(--primary); border-radius: 4px; }
+.layout__account .layout__cta:hover { color: var(--white); opacity: 0.9; }
+.layout__user { color: var(--dark-gray-3); }
+.layout__account button { padding: 6px 12px; border: 1px solid var(--light-gray-2); border-radius: 4px; background: var(--white); cursor: pointer; }
+
+.layout__footer { background: var(--light-gray-3); padding: 24px 0; font-size: 14px; color: var(--dark-gray-3); }
+
+.layout__cart { position: relative; display: flex; align-items: center; padding: 6px; }
+.layout__cart span {
+  position: absolute; top: -4px; right: -6px; min-width: 18px; height: 18px; padding: 0 5px;
+  font-size: 11px; font-weight: 700; line-height: 18px; text-align: center; color: var(--white); background: var(--primary); border-radius: 9px;
+}

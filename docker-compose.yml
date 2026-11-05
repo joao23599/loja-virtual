@@ -1,0 +1,44 @@
+# Suba UM dos bancos (os dois usam "profiles"):
+#   PostgreSQL:  docker compose --profile postgres up -d
+#   MySQL:       docker compose --profile mysql up -d
+services:
+  postgres:
+    image: postgres:16
+    profiles: ["postgres"]
+    container_name: loja-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: loja
+    ports:
+      - "5432:5432"
+    volumes:
+      - loja-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d loja"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  mysql:
+    image: mysql:8.0
+    profiles: ["mysql"]
+    container_name: loja-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: loja
+    ports:
+      - "3306:3306"
+    volumes:
+      - loja-mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  loja-postgres-data:
+  loja-mysql-data:

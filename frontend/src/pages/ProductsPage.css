@@ -1,0 +1,15 @@
+.products { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; }
+.products:not(:has(.filters)) { grid-template-columns: 1fr; }
+.products__results { min-width: 0; }
+.products__results h1 { margin: 0 0 4px; font-size: 24px; color: var(--dark-gray); }
+.products__count { margin: 0 0 20px; font-size: 14px; color: var(--light-gray); }
+
+.products .product-listing { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+.pagination { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; }
+.pagination button { padding: 8px 16px; border: 1px solid var(--light-gray-2); border-radius: 4px; background: var(--white); cursor: pointer; }
+.pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (max-width: 900px) {
+  .products { grid-template-columns: 1fr; gap: 24px; }
+}

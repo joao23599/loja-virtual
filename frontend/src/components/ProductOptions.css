@@ -1,0 +1,41 @@
+.product-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-option {
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--light-gray-2, #ccc);
+  padding: 0;
+}
+
+.product-option--square {
+  height: 46px;
+  min-width: 46px;
+  width: auto;
+  padding: 0 12px;
+}
+
+.product-option--circle {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+}
+
+.product-option--text {
+  font-size: 24px;
+  color: var(--dark-gray-2, #474747);
+}
+
+/* Selecionado: borda de 2px na cor primary */
+.product-option.is-selected {
+  border: 2px solid var(--primary, #c92071);
+}
+
+.product-option:focus-visible {
+  outline: 2px solid var(--primary, #c92071);
+  outline-offset: 2px;
+}

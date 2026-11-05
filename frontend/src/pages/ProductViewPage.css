@@ -1,0 +1,26 @@
+.product-view {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 32px 0;
+}
+
+.product-view__label {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--light-gray, #8f8f8f);
+}
+
+/* Telas menores: galeria acima, buy box abaixo */
+@media (max-width: 1100px) {
+  .product-view {
+    flex-direction: column;
+  }
+}
+
+.product-view__state {
+  padding: 64px 0;
+  text-align: center;
+  font-size: 16px;
+  color: var(--dark-gray-2, #474747);
+}
